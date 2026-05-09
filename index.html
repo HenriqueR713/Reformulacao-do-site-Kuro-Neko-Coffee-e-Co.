@@ -168,44 +168,56 @@
 
 
 
- <!-- CARDÁPIO -->
-        <li>
+<!-- CARDÁPIO -->
+<li>
 
-          <!--CARDÁPIO DESTAQUE -->
-    <div class="menu-banner">
+  <div class="menu-banner">
 
-      <!-- TEXTO -->
-      <div class="menu-left">
+    <!-- TEXTO -->
+    <div class="menu-left">
 
-        <h2>
-          Acesse nosso cardápio
-        </h2>
+      <h2>
+        Acesse nosso cardápio
+      </h2>
 
-        <a
-          href="SEU_LINK_AQUI"
-          target="_blank"
-          class="menu-btn"
-        >
-          Clique Aqui
-        </a>
+      <p class="menu-small-text">
+        Explore nossas bebidas, doces e pratos especiais.
+      </p>
 
-      </div>
-
-      <!-- IMAGEM -->
-      <div class="menu-image">
-
-        <img
-          src="https://imgs.search.brave.com/0VJ7DKV_jrz-LAqLbMqZoBCmAzkuJV3_IplpriVsRt8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGVuYWVzdHJhZGEu/YmxvZy5ici93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMS8wMi9j/b21pZGFzLXRpcGlj/YXMtZG8tYnJhc2ls/LXRhcGlvY2EuanBn/LndlYnA"
-          alt=""
-        />
-
-        <div class="image-blur"></div>
-
-      </div>
+      <a
+        href="SEU_LINK_AQUI"
+        target="_blank"
+        class="menu-btn"
+      >
+        Clique Aqui
+      </a>
 
     </div>
 
+    <!-- SLIDER -->
+    <!-- SUBSTITUA o bloco <div class="menu-slider"> ... </div> + as duas <div class="slider-fade"> pelo trecho abaixo -->
 
+    <div class="menu-slider" id="menuSlider">
+      <button class="slider-arrow left"  onclick="sliderGo(-1)">&#10094;</button>
+      <button class="slider-arrow right" onclick="sliderGo( 1)">&#10095;</button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+     
+
+      
+      
+
+      
+
+     
+      
+
+      
+
+      
+
+</li>
 
   <!-- SWITCH -->
   <div id="switch" onclick="toggleMode()">
