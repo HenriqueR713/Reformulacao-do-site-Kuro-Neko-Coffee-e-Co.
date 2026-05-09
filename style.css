@@ -1,0 +1,855 @@
+/* =========================================================
+   1. ROOT / LIGHT MODE
+========================================================= */
+
+:root {
+  --surface-color: rgba(255, 255, 255, 0.2);
+  --stroke-color: rgba(255, 255, 255, 0.4);
+  --highlight-color: rgba(255, 255, 255, 0.1);
+
+  --bg: #000000;
+  --text-color: #ffffff;
+
+  --btn-bg: #fff4f4;
+  --btn-text: #000000;
+
+  --btn-circle: white;
+
+  --cat-main: black;
+  --cat-inner: #666;
+
+  --card-bg: rgba(255,255,255,0.03);
+  --card-border: rgba(255,255,255,0.08);
+
+  --card-title: #ffffff;
+
+  --card-button-bg: #ffffff;
+  --card-button-text: #000000;
+
+  --card-blur: rgba(255,255,255,0.06);
+}
+
+html.light {
+  --bg: #ffffff;
+  --text-color: #000000;
+
+  --btn-bg: #000000;
+  --btn-text: #ffffff;
+
+  --btn-circle: black;
+
+  --card-bg: rgba(0,0,0,0.05);
+  --card-border: rgba(0,0,0,0.08);
+
+  --card-title: #000000;
+
+  --card-button-bg: #000000;
+  --card-button-text: #ffffff;
+
+  --card-blur: rgba(0,0,0,0.05);
+}
+
+.light {
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --stroke-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   3. BODY
+========================================================= */
+
+body {
+  background: var(--bg);
+  transition: background 0.4s ease;
+}
+
+body * {
+  font-family: "inter", sans-serif;
+}
+
+/* =========================================================
+   4. CONTAINER
+========================================================= */
+
+#container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 56px auto 0 auto;
+
+  padding: 0 24px;
+}
+
+/* =========================================================
+   5. HERO
+========================================================= */
+
+.hero {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding-top: 40px;
+
+  margin-bottom: 50px;
+}
+
+/* logo */
+
+.hero-logo img {
+  width: clamp(90px, 10vw, 140px);
+
+  height: auto;
+
+  object-fit: contain;
+
+  margin-bottom: 26px;
+}
+
+/* título */
+
+.hero-title {
+  color: var(--text-color);
+
+  font-size: clamp(42px, 7vw, 62px);
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 18px;
+
+  max-width: 1100px;
+
+  font-family: "inter", serif;
+}
+
+/* subtítulo */
+
+.hero-subtitle {
+  color: var(--text-color);
+
+  opacity: 0.75;
+
+  font-size: clamp(14px, 1.2vw, 22px);
+
+  letter-spacing: 6px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   6. CARDÁPIO
+========================================================= */
+
+.menu-banner {
+  width: 100%;
+  max-width: 529px;
+
+  margin-top: 40px;
+
+  padding: 24px;
+
+  border-radius: 28px;
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--card-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(12px);
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* texto */
+
+.menu-left {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  min-width: 0;
+}
+
+.menu-left h2 {
+  color: var(--card-title);
+
+  font-size: clamp(28px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  font-weight: 300;
+}
+
+/* botão */
+
+.menu-btn {
+  width: fit-content;
+
+  padding: 16px 34px;
+
+  background: var(--card-button-bg);
+  color: var(--card-button-text);
+
+  text-decoration: none;
+
+  border-radius: 18px;
+
+  font-size: clamp(16px, 2vw, 24px);
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* imagem */
+
+.menu-image {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 260px;
+  max-width: 500px;
+
+  aspect-ratio: 1 / 1;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* blur */
+
+.image-blur {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 40%;
+  height: 100%;
+
+  backdrop-filter: blur(12px);
+
+  background: var(--card-blur);
+
+  mask-image: linear-gradient(
+    to right,
+    black 30%,
+    transparent 100%
+  );
+}
+
+/* =========================================================
+   7. SWITCH
+========================================================= */
+
+#switch {
+  position: relative;
+
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+
+  background: white;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  position: absolute;
+
+  align-items: center;
+  justify-content: center;
+
+  top: 50%;
+  left: 0;
+
+  z-index: 1;
+
+  transform: translate(0, -50%);
+
+  transition: transform 0.4s ease;
+
+  overflow: hidden;
+}
+
+html.light #switch button {
+  background: black;
+
+  transform: translate(32px, -50%);
+}
+
+#switch button:hover {
+  box-shadow: 0 0 0 8px var(--highlight-color);
+}
+
+#switch span {
+  display: block;
+
+  width: 64px;
+  height: 25px;
+
+  background: var(--surface-color);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  border-radius: 9999px;
+}
+
+#switch-btn img {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  object-fit: contain;
+
+  margin: auto;
+}
+
+#switch-icon {
+  filter: brightness(0) invert(0);
+}
+
+html.light #switch-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* =========================================================
+   8. LINKS
+========================================================= */
+
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  align-items: center;
+
+  padding: 24px 0;
+}
+
+ul li a:hover {
+  transform: translateY(-2px) scale(0.98);
+}
+
+ul li a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  color: var(--btn-text);
+
+  background: var(--btn-bg);
+
+  border-radius: 10px;
+
+  width: 312px;
+
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+  transition: all 0.4s ease;
+
+  position: relative;
+}
+
+/* =========================================================
+   9. BOTÕES GATO
+========================================================= */
+
+.cat-btn-wrapper {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+}
+
+/* rabo */
+
+.cat-tail-container {
+  width: 0;
+
+  overflow: visible;
+
+  position: relative;
+
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.cat-tail-svg {
+  position: absolute;
+
+  left: -14px;
+
+  top: 50%;
+
+  transform: translateY(-50%) scaleX(0);
+
+  transform-origin: left center;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cat-btn-wrapper:hover .cat-tail-svg {
+  opacity: 1;
+
+  transform: translateY(-50%) scaleX(1);
+}
+
+.cat-btn-wrapper:hover .cat-tail-path {
+  animation: tail-wag 1.4s ease-in-out infinite;
+
+  transform-origin: 2px 18px;
+}
+
+/* orelhas */
+
+.cat-ears-container {
+  width: 0;
+
+  overflow: visible;
+
+  position: relative;
+
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  order: -1;
+}
+
+.cat-ears-svg {
+  position: absolute;
+
+  left: -19px;
+
+  right: auto;
+
+  top: 45.5%;
+
+  transform: translateY(-50%) scaleX(-1);
+
+  transform-origin: right center;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cat-btn-wrapper:hover .cat-ears-svg {
+  opacity: 1;
+
+  transform: translateY(-50%) scaleX(1);
+
+  animation: ear-twitch 0.6s ease;
+}
+
+html:not(.light) {
+  --cat-main: #ffffff;
+  --cat-inner: #f4a6b8;
+}
+
+.cat-btn-wrapper:hover .cat-ears-svg {
+  opacity: 1;
+
+  transform: translate(0, -50%) scale(1);
+
+  animation: ear-twitch 0.6s ease 0.35s;
+}
+
+/* =========================================================
+   10. SOCIAL LINKS
+========================================================= */
+
+#social-links {
+  display: flex;
+
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 30px;
+}
+
+#social-links a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  transition: all 0.5s;
+}
+
+#social-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+
+  padding: 16px;
+
+  border-radius: 50%;
+}
+
+/* =========================================================
+   11. FOOTER
+========================================================= */
+
+footer {
+  padding: 23px 0;
+
+  text-align: center;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   12. COMMUNITY
+========================================================= */
+
+.community-section {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 80px auto 40px auto;
+
+  padding: 0 24px;
+}
+
+/* título */
+
+.community-header {
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.community-header h2 {
+  color: var(--text-color);
+
+  font-size: clamp(32px, 4vw, 56px);
+
+  margin-bottom: 14px;
+
+  font-weight: 700;
+}
+
+.community-header p {
+  color: var(--text-color);
+
+  opacity: 0.75;
+
+  font-size: clamp(15px, 1.3vw, 22px);
+}
+
+/* grid */
+
+.community-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+/* card */
+
+.community-card {
+  background: var(--card-bg);
+
+  border: 1px solid var(--card-border);
+
+  border-radius: 28px;
+
+  padding: 34px 24px;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+  backdrop-filter: blur(10px);
+
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.community-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* ícone */
+
+.community-icon {
+  font-size: 52px;
+
+  margin-bottom: 22px;
+
+  color: var(--text-color);
+}
+
+/* título */
+
+.community-card h3 {
+  color: var(--text-color);
+
+  font-size: 28px;
+
+  margin-bottom: 14px;
+}
+
+/* texto */
+
+.community-card p {
+  color: var(--text-color);
+
+  opacity: 0.72;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   13. ANIMAÇÕES
+========================================================= */
+
+@keyframes tail-wag {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(8deg);
+  }
+
+  50% {
+    transform: rotate(-6deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ear-twitch {
+  0% {
+    transform: translate(0, -50%) scale(1) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(0, -50%) scale(1) rotate(2deg);
+  }
+
+  40% {
+    transform: translate(0, -50%) scale(1) rotate(-2deg);
+  }
+
+  60% {
+    transform: translate(0, -50%) scale(1) rotate(1deg);
+  }
+
+  100% {
+    transform: translate(0, -50%) scale(1) rotate(0deg);
+  }
+}
+
+/* =========================================================
+   14. MEDIA QUERIES
+========================================================= */
+
+@media (min-width: 700px) {
+
+  :root {
+    --bg-url: url(./assets/tela\ maior.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/tela\ maior\ branca.jpg);
+  }
+}
+
+/* tablet/mobile */
+
+@media (max-width: 768px) {
+
+  .menu-banner {
+    flex-direction: row;
+
+    padding: 18px;
+  }
+
+  .menu-left {
+    width: 100%;
+  }
+
+  .menu-image {
+    width: 100%;
+
+    max-width: none;
+  }
+
+  .menu-btn {
+    width: 100%;
+
+    text-align: center;
+  }
+}
+
+/* tablet */
+
+@media (max-width: 1100px) {
+
+  .community-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding-top: 26px;
+
+    margin-bottom: 36px;
+  }
+
+  .hero-title {
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+
+    width: 95%;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 3px;
+
+    width: 90%;
+
+    line-height: 1.5;
+  }
+
+  .community-section {
+    margin-top: 50px;
+  }
+
+  .community-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+  .community-card {
+    min-height: 190px;
+
+    padding: 20px 14px;
+
+    border-radius: 22px;
+  }
+
+  .community-icon {
+    font-size: 38px;
+
+    margin-bottom: 14px;
+  }
+
+  .community-card h3 {
+    font-size: 18px;
+  }
+
+  .community-card p {
+    font-size: 13px;
+  }
+}
