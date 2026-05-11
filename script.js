@@ -18,11 +18,6 @@ function toggleMode() {
 //     html.classList.add('light')
 // }
 
-/* =========================================================
-   NOVO SLIDER
-   Substitua todo o bloco antigo do slider por este código
-========================================================= */
-
 const images = [
   "https://imgs.search.brave.com/HjHB63Dm95_SQhrl9mlYCLrMT46ZpMakSP-tuBwRFww/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyaXNtb2Np/dHkuY29tL2Nkbi1j/Z2kvaW1hZ2UvZm9y/bWF0PWF1dG8sd2lk/dGg9c2NhbGUtZG93/bixoZWlnaHQ9MTQw/MCxzY2FsZS1kb3du/PWNvdmVyL2ltZy9i/bG9nLzE3MzAzMjE3/MDg5NDZfQ29taWRh/cy10aXBpY2FzLWJy/YXNpbGVpcmFzLWFj/YXJhamUuanBn",
   "https://imgs.search.brave.com/KN11imA6WCMqfVCPDh8SmhAhZFZQDkVPeN_vX7seQ0s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWVsaG9yZXNkZXN0/aW5vcy5jb20uYnIv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MTIvY29taWRhcy10/aXBpY2FzLWJyYXNp/bC1wYXJhLmpwZw",
@@ -154,8 +149,6 @@ function sliderBuild() {
   sliderUpdateDots()
 }
 
-/* ─── dots: cria os elementos uma única vez ─── */
-
 function sliderBuildDots() {
   sliderDots.innerHTML = ""
   for (let i = 0; i < SLIDER_N; i++) {
@@ -165,15 +158,11 @@ function sliderBuildDots() {
   }
 }
 
-/* ─── dots: atualiza active + nudge animado na direção do clique ─── */
-
 function sliderUpdateDots(dir = 0) {
   const dots = sliderDots.querySelectorAll(".slider-dot")
   dots.forEach((d, i) => {
     d.classList.toggle("active", i === sliderCur)
   })
-
-  
 }
 
 function sliderGo(dir) {
