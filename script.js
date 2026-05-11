@@ -12,14 +12,13 @@ function toggleMode() {
   }
 }
 
-  // if(html.classList.contains('light')) {
-  // html.classList.remove('light')
-  // } else {
-  //     html.classList.add('light')
-  // }
+// if(html.classList.contains('light')) {
+// html.classList.remove('light')
+// } else {
+//     html.classList.add('light')
+// }
 
-
-  /* =========================================================
+/* =========================================================
    NOVO SLIDER
    Substitua todo o bloco antigo do slider por este código
 ========================================================= */
@@ -32,24 +31,70 @@ const images = [
   "https://imgs.search.brave.com/3WJgrZcOaw3_fndeTZ1S8mUQUd3CSwG0SXhZqXBNG7Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWVsaG9yZXNkZXN0/aW5vcy5jb20uYnIv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MTIvY29taWRhcy10/aXBpY2FzLWJyYXNp/bC1hbWF6b25hcy5q/cGVn",
 ]
 
-const SLIDER_N    = images.length
-let   sliderCur   = 0
-let   sliderBusy  = false
+const SLIDER_N = images.length
+let sliderCur = 0
+let sliderBusy = false
 
-const sliderScene = document.getElementById('menuSlider')
-const sliderDots  = document.getElementById('sliderDots')
+const sliderScene = document.getElementById("menuSlider")
+const sliderDots = document.getElementById("sliderDots")
 
-const DUR  = 560
-const EASE = 'cubic-bezier(0.22,1,0.36,1)'
+const DUR = 560
+const EASE = "cubic-bezier(0.22,1,0.36,1)"
 
-function sliderW() { return sliderScene.offsetWidth  }
-function sliderH() { return sliderScene.offsetHeight }
+function sliderW() {
+  return sliderScene.offsetWidth
+}
+function sliderH() {
+  return sliderScene.offsetHeight
+}
 
-function POS_MAIN()  { return { x: 0,                  w: 0.58, h: 1.00, br: 1,    z: 4, op: 1, shadow: true  } }
-function POS_LEFT()  { return { x: -sliderW() * 0.295, w: 0.42, h: 0.82, br: 0.65, z: 2, op: 1, shadow: false } }
-function POS_RIGHT() { return { x:  sliderW() * 0.295, w: 0.42, h: 0.82, br: 0.65, z: 2, op: 1, shadow: false } }
-function POS_GONE_L(){ return { x: -sliderW() * 0.90,  w: 0.42, h: 0.72, br: 0.5,  z: 1, op: 0, shadow: false } }
-function POS_GONE_R(){ return { x:  sliderW() * 0.90,  w: 0.42, h: 0.72, br: 0.5,  z: 1, op: 0, shadow: false } }
+function POS_MAIN() {
+  return { x: 0, w: 0.58, h: 1.0, br: 1, z: 4, op: 1, shadow: true }
+}
+function POS_LEFT() {
+  return {
+    x: -sliderW() * 0.295,
+    w: 0.42,
+    h: 0.82,
+    br: 0.65,
+    z: 2,
+    op: 1,
+    shadow: false,
+  }
+}
+function POS_RIGHT() {
+  return {
+    x: sliderW() * 0.295,
+    w: 0.42,
+    h: 0.82,
+    br: 0.65,
+    z: 2,
+    op: 1,
+    shadow: false,
+  }
+}
+function POS_GONE_L() {
+  return {
+    x: -sliderW() * 0.9,
+    w: 0.42,
+    h: 0.72,
+    br: 0.5,
+    z: 1,
+    op: 0,
+    shadow: false,
+  }
+}
+function POS_GONE_R() {
+  return {
+    x: sliderW() * 0.9,
+    w: 0.42,
+    h: 0.72,
+    br: 0.5,
+    z: 1,
+    op: 0,
+    shadow: false,
+  }
+}
 
 function sliderApplyPos(el, pos, duration) {
   const ew = sliderW() * pos.w
@@ -57,29 +102,31 @@ function sliderApplyPos(el, pos, duration) {
   const brightness = pos.br >= 1 ? 1 : 0.42 + 0.58 * pos.br
 
   if (duration === 0) {
-    el.style.transition = 'none'
+    el.style.transition = "none"
   } else {
     const t = `${duration}ms ${EASE}`
     el.style.transition = `width ${t},height ${t},transform ${t},filter ${t},opacity ${t},box-shadow ${t}`
   }
 
-  el.style.width     = ew + 'px'
-  el.style.height    = eh + 'px'
+  el.style.width = ew + "px"
+  el.style.height = eh + "px"
   el.style.transform = `translate(calc(-50% + ${pos.x}px), -50%)`
-  el.style.zIndex    = pos.z
-  el.style.opacity   = pos.op
-  el.style.filter    = `brightness(${brightness})`
-  el.style.boxShadow = pos.shadow ? '0 10px 50px rgba(0,0,0,0.35)' : 'none'
+  el.style.zIndex = pos.z
+  el.style.opacity = pos.op
+  el.style.filter = `brightness(${brightness})`
+  el.style.boxShadow = pos.shadow ? "0 10px 50px rgba(0,0,0,0.35)" : "none"
 }
 
-function sliderIdx(i) { return ((i % SLIDER_N) + SLIDER_N) % SLIDER_N }
+function sliderIdx(i) {
+  return ((i % SLIDER_N) + SLIDER_N) % SLIDER_N
+}
 
 function sliderMakeEl(i) {
-  const el  = document.createElement('div')
-  el.className = 'kn-slide'
-  const img = document.createElement('img')
+  const el = document.createElement("div")
+  el.className = "kn-slide"
+  const img = document.createElement("img")
   img.src = images[sliderIdx(i)]
-  img.alt = 'Cardápio'
+  img.alt = "Cardápio"
   el.appendChild(img)
   return el
 }
@@ -87,85 +134,112 @@ function sliderMakeEl(i) {
 let sliderEls = {}
 
 function sliderBuild() {
-  Object.values(sliderEls).forEach(e => e.remove())
+  Object.values(sliderEls).forEach((e) => e.remove())
   sliderEls = {}
 
   const configs = [
     [sliderIdx(sliderCur - 1), POS_LEFT()],
-    [sliderIdx(sliderCur),     POS_MAIN()],
+    [sliderIdx(sliderCur), POS_MAIN()],
     [sliderIdx(sliderCur + 1), POS_RIGHT()],
   ]
 
   configs.forEach(([i, pos]) => {
     const el = sliderMakeEl(i)
     sliderApplyPos(el, pos, 0)
-    sliderScene.insertBefore(el, sliderScene.querySelector('.slider-arrow'))
+    sliderScene.insertBefore(el, sliderScene.querySelector(".slider-arrow"))
     sliderEls[i] = el
   })
 
+  sliderBuildDots()
   sliderUpdateDots()
 }
 
-function sliderUpdateDots() {
-  sliderDots.innerHTML = ''
+/* ─── dots: cria os elementos uma única vez ─── */
+
+function sliderBuildDots() {
+  sliderDots.innerHTML = ""
   for (let i = 0; i < SLIDER_N; i++) {
-    const d = document.createElement('div')
-    d.className = 'slider-dot' + (i === sliderCur ? ' active' : '')
+    const d = document.createElement("div")
+    d.className = "slider-dot" + (i === sliderCur ? " active" : "")
     sliderDots.appendChild(d)
   }
+}
+
+/* ─── dots: atualiza active + nudge animado na direção do clique ─── */
+
+function sliderUpdateDots(dir = 0) {
+  const dots = sliderDots.querySelectorAll(".slider-dot")
+  dots.forEach((d, i) => {
+    d.classList.toggle("active", i === sliderCur)
+  })
+
+  
 }
 
 function sliderGo(dir) {
   if (sliderBusy) return
   sliderBusy = true
 
-  const oldLeft  = sliderIdx(sliderCur - 1)
-  const oldMain  = sliderIdx(sliderCur)
+  const oldLeft = sliderIdx(sliderCur - 1)
+  const oldMain = sliderIdx(sliderCur)
   const oldRight = sliderIdx(sliderCur + 1)
 
   sliderCur = sliderIdx(sliderCur + dir)
 
-  sliderUpdateDots()
+  sliderUpdateDots(dir)
 
   if (dir === 1) {
     const entering = sliderMakeEl(sliderIdx(sliderCur + 1))
     sliderApplyPos(entering, POS_GONE_R(), 0)
-    sliderScene.insertBefore(entering, sliderScene.querySelector('.slider-arrow'))
+    sliderScene.insertBefore(
+      entering,
+      sliderScene.querySelector(".slider-arrow"),
+    )
     sliderEls[sliderIdx(sliderCur + 1)] = entering
 
     entering.getBoundingClientRect()
 
-    sliderApplyPos(sliderEls[oldLeft],  POS_GONE_L(), DUR)
-    sliderApplyPos(sliderEls[oldMain],  POS_LEFT(),   DUR)
-    sliderApplyPos(sliderEls[oldRight], POS_MAIN(),   DUR)
-    sliderApplyPos(entering,            POS_RIGHT(),  DUR)
+    sliderApplyPos(sliderEls[oldLeft], POS_GONE_L(), DUR)
+    sliderApplyPos(sliderEls[oldMain], POS_LEFT(), DUR)
+    sliderApplyPos(sliderEls[oldRight], POS_MAIN(), DUR)
+    sliderApplyPos(entering, POS_RIGHT(), DUR)
 
     setTimeout(() => {
       sliderEls[oldLeft] && sliderEls[oldLeft].remove()
       delete sliderEls[oldLeft]
       sliderBusy = false
     }, DUR + 60)
-
   } else {
     const entering = sliderMakeEl(sliderIdx(sliderCur - 1))
+
     sliderApplyPos(entering, POS_GONE_L(), 0)
-    sliderScene.insertBefore(entering, sliderScene.querySelector('.slider-arrow'))
+
+    sliderScene.insertBefore(
+      entering,
+      sliderScene.querySelector(".slider-arrow"),
+    )
+
     sliderEls[sliderIdx(sliderCur - 1)] = entering
 
     entering.getBoundingClientRect()
 
     sliderApplyPos(sliderEls[oldRight], POS_GONE_R(), DUR)
-    sliderApplyPos(sliderEls[oldMain],  POS_RIGHT(),  DUR)
-    sliderApplyPos(sliderEls[oldLeft],  POS_MAIN(),   DUR)
-    sliderApplyPos(entering,            POS_LEFT(),   DUR)
+
+    sliderApplyPos(sliderEls[oldMain], POS_RIGHT(), DUR)
+
+    sliderApplyPos(sliderEls[oldLeft], POS_MAIN(), DUR)
+
+    sliderApplyPos(entering, POS_LEFT(), DUR)
 
     setTimeout(() => {
       sliderEls[oldRight] && sliderEls[oldRight].remove()
+
       delete sliderEls[oldRight]
+
       sliderBusy = false
     }, DUR + 60)
   }
 }
 
-window.addEventListener('resize', sliderBuild)
+window.addEventListener("resize", sliderBuild)
 sliderBuild()

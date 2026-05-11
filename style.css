@@ -130,7 +130,7 @@ body * {
 /* logo */
 
 .hero-logo img {
-  width: clamp(90px, 10vw, 140px);
+  width: clamp(120px, 10vw, 140px);
 
   height: auto;
 
@@ -265,6 +265,19 @@ body * {
 
 .menu-btn:hover {
   transform: translateY(-3px);
+}
+
+/* wrapper lado direito do banner */
+
+.menu-right {
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 16px;
 }
 
 /* =========================================================
@@ -454,11 +467,8 @@ footer {
 
 .community-section {
   width: 100%;
-  max-width: 1400px;
 
   margin: 80px auto 40px auto;
-
-  padding: 0 24px;
 }
 
 /* título */
@@ -644,9 +654,11 @@ footer {
     align-items: center;
   }
 
-  .menu-slider {
+  .menu-right {
     width: 100%;
+  }
 
+  .menu-slider {
     height: 240px;
   }
 
@@ -690,49 +702,47 @@ footer {
 /* mobile */
 
 @media (max-width: 700px) {
+
   .hero {
     padding-top: 26px;
-
     margin-bottom: 36px;
   }
 
   .hero-title {
     line-height: 1.08;
-
     letter-spacing: -1px;
-
     width: 95%;
   }
 
   .hero-subtitle {
     letter-spacing: 3px;
-
     width: 90%;
-
     line-height: 1.5;
   }
 
+  /* AJUSTE DOS CARDS */
+
   .community-section {
+    width: 100%;
     margin-top: 50px;
+    padding: 0;
   }
 
   .community-grid {
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
-
-    gap: 14px;
+    gap: 10px;
   }
 
   .community-card {
+    width: 100%;
     min-height: 190px;
-
     padding: 20px 14px;
-
     border-radius: 22px;
   }
 
   .community-icon {
     font-size: 38px;
-
     margin-bottom: 14px;
   }
 
@@ -746,11 +756,11 @@ footer {
 }
 
 /* =========================================================
-   NOVO SLIDER — adicione ao final do style.css
+   NOVO SLIDER
 ========================================================= */
 
 .menu-slider {
-  width: 70%;
+  width: 100%;
   height: 360px;
   position: relative;
   overflow: hidden;
@@ -782,10 +792,10 @@ footer {
 .slider-arrow {
   position: absolute;
   z-index: 10;
-  width: 52px;
+  width: 40px;
   height: 52px;
   border: none;
-  border-radius: 50%;
+  border-radius: 20%;
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(10px);
   color: white;
@@ -807,47 +817,66 @@ footer {
   transform: scale(0.96);
 }
 .slider-arrow.left {
-  left: 18%;
+  left: 14%;
 }
 .slider-arrow.right {
-  right: 18%;
+  right: 14%;
 }
 
 html.light .slider-arrow {
-  background: rgba(0, 0, 0, 0.1);
-  color: black;
+  background: rgba(255, 255, 255, 0.10);
+  color: white;
 }
 
-/* dots */
+/* =========================================================
+   INDICADORES DO SLIDER
+========================================================= */
+
 .slider-dots {
-  position: absolute;
-  bottom: -28px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  gap: 8px;
-  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 20;
 }
+
+/* bolinhas */
 
 .slider-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--card-border);
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.30);
+  opacity: 0.55;
   transition:
-    background 0.35s,
-    transform 0.35s;
+    width 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 400ms ease,
+    background-color 400ms ease;
+  will-change: width;
+  backface-visibility: hidden;
 }
 
+/* ativa */
+
 .slider-dot.active {
-  background: var(--text-color);
-  transform: scale(1.35);
+  width: 20px;
+  background: white;
+  opacity: 1;
+}
+
+/* light mode */
+
+html.light .slider-dot {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+html.light .slider-dot.active {
+  background: black;
 }
 
 /* responsivo */
 @media (max-width: 900px) {
   .menu-slider {
-    width: 100%;
     height: 260px;
   }
   .slider-arrow.left {
