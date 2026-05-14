@@ -12,18 +12,14 @@ function toggleMode() {
   }
 }
 
-// if(html.classList.contains('light')) {
-// html.classList.remove('light')
-// } else {
-//     html.classList.add('light')
-// }
+
 
 const images = [
-  "https://imgs.search.brave.com/HjHB63Dm95_SQhrl9mlYCLrMT46ZpMakSP-tuBwRFww/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyaXNtb2Np/dHkuY29tL2Nkbi1j/Z2kvaW1hZ2UvZm9y/bWF0PWF1dG8sd2lk/dGg9c2NhbGUtZG93/bixoZWlnaHQ9MTQw/MCxzY2FsZS1kb3du/PWNvdmVyL2ltZy9i/bG9nLzE3MzAzMjE3/MDg5NDZfQ29taWRh/cy10aXBpY2FzLWJy/YXNpbGVpcmFzLWFj/YXJhamUuanBn",
-  "https://imgs.search.brave.com/KN11imA6WCMqfVCPDh8SmhAhZFZQDkVPeN_vX7seQ0s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWVsaG9yZXNkZXN0/aW5vcy5jb20uYnIv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MTIvY29taWRhcy10/aXBpY2FzLWJyYXNp/bC1wYXJhLmpwZw",
-  "https://imgs.search.brave.com/jOQ0dMy2uwOVtfxOTvBn1EY_Uygc6NZi9ifMwo0qOlg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWVsaG9yZXNkZXN0/aW5vcy5jb20uYnIv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MTIvY29taWRhcy10/aXBpY2FzLWNhcGEy/MDE5LTAxLTgyMHg0/MzAuanBn",
-  "https://imgs.search.brave.com/utu6B5PkO86Y3zhAfdYBIc8GaPGBg8FhucCIG__aljU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbnN0/aXR1Y2lvbmFsLmlm/b29kLmNvbS5ici93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/Ny9jb21pZGFzLXRp/cGljYXMtbW9xdWVj/YS5qcGc",
-  "https://imgs.search.brave.com/3WJgrZcOaw3_fndeTZ1S8mUQUd3CSwG0SXhZqXBNG7Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWVsaG9yZXNkZXN0/aW5vcy5jb20uYnIv/d3AtY29udGVudC91/cGxvYWRzLzIwMjAv/MTIvY29taWRhcy10/aXBpY2FzLWJyYXNp/bC1hbWF6b25hcy5q/cGVn",
+  "./assets/Imagens/COMIDA-1-CORTADO.jpg.jpeg",
+  "./assets/Imagens/COMIDA-3-CORTADO.jpg.jpeg",
+  "./assets/Imagens/COMIDA-4-CORTADO.jpg.jpeg",
+  "./assets/Imagens/COMIDA-5-CORTADO.jpg.jpeg",
+  "./assets/Imagens/COMIDA-6-CORTADO.jpg.jpeg",
 ]
 
 const SLIDER_N = images.length
