@@ -3,7 +3,7 @@
 ========================================================= */
 
 :root {
-  --accent-yellow: #ffd400;
+  --accent-yellow: #efc804;
   --accent-pink: #ef6ea8;
   --accent-purple: #7d4dff;
   --accent-orange: #ff6b1a;
@@ -216,7 +216,13 @@ body {
   height: auto;
   object-fit: contain;
   margin-bottom: 26px;
-  filter: brightness(0) invert(1);
+
+  filter:
+  drop-shadow(4px 0 0 white)
+  drop-shadow(-4px 0 0 white)
+  drop-shadow(0 4px 0 white)
+  drop-shadow(0 -4px 0 white);
+
   transition: transform 0.4s ease;
 }
 
@@ -363,7 +369,7 @@ html.light .hero-logo img {
   z-index: 1;
 }
 
-.community-card:nth-child(1) * { color: black; }
+.community-card:nth-child(1) * { color: white; }
 .community-card:nth-child(2) *,
 .community-card:nth-child(3) *,
 .community-card:nth-child(4) * { color: white; }
