@@ -1687,7 +1687,7 @@ html.light .footer-dev-btn:hover {
     font-size: 13px;
   }
 
-  /* ALTERADO */
+  
   .menu-slider {
     height: 260px;
   }
@@ -1750,11 +1750,14 @@ html.light .footer-dev-btn:hover {
   .kn-slide {
     border-radius: 20px;
     overflow: hidden;
-    background: transparent;
+
+    background: #0f0f0f;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
 
   .kn-slide img {
@@ -1764,9 +1767,9 @@ html.light .footer-dev-btn:hover {
 
     object-fit: contain;
 
-    border-radius: 20px;
-
     display: block;
+
+    border-radius: inherit;
   }
 
 }
