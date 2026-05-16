@@ -15,11 +15,11 @@ function toggleMode() {
 // IMAGENS DO CARDÁPIO //
 
 const images = [
-  "./assets/Imagens/Imagens Cardapio/COMIDA-1-CORTADO.jpg.jpeg",
-  "./assets/Imagens/Imagens Cardapio/COMIDA-3-CORTADO.jpg.jpeg",
-  "./assets/Imagens/Imagens Cardapio/COMIDA-4-CORTADO.jpg.jpeg",
-  "./assets/Imagens/Imagens Cardapio/COMIDA-5-CORTADO.jpg.jpeg",
-  "./assets/Imagens/Imagens Cardapio/COMIDA-6-CORTADO.jpg.jpeg",
+  "./assets/Imagens/Imagens Cardapio/COMIDA-1.jpeg",
+  "./assets/Imagens/Imagens Cardapio/COMIDA-3.jpeg",
+  "./assets/Imagens/Imagens Cardapio/COMIDA-4.jpeg",
+  "./assets/Imagens/Imagens Cardapio/COMIDA-5.jpeg",
+  "./assets/Imagens/Imagens Cardapio/COMIDA-6.jpeg",
 ]
 
 const SLIDER_N = images.length
