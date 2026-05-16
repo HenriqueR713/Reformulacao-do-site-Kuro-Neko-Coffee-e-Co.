@@ -940,6 +940,270 @@ html.light .stat-num { color: var(--accent-purple); }
 }
 
 /* =========================================================
+   PARCERIAS
+========================================================= */
+
+.partners-section {
+  width: calc(100% - 48px);
+  max-width: 1450px;
+  margin: 40px auto 0 auto;
+  padding: 50px 40px 60px;
+  border-radius: 34px;
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+
+.partners-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-pink), var(--accent-purple), var(--accent-red));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.partners-section::after {
+  content: "仲間";
+  position: absolute;
+  right: -10px;
+  bottom: -50px;
+  font-size: clamp(120px, 18vw, 220px);
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  letter-spacing: -12px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+html.light .partners-section::after {
+  color: rgba(0,0,0,0.04);
+}
+
+.partners-header {
+  margin-bottom: 44px;
+  position: relative;
+  z-index: 2;
+}
+
+.partners-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent-pink);
+  margin-bottom: 16px;
+}
+
+.partners-title {
+  font-size: clamp(38px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -3px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.partners-title span {
+  color: var(--accent-yellow);
+}
+
+html.light .partners-title span {
+  color: var(--accent-purple);
+}
+
+.partners-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-color);
+  opacity: 0.72;
+  max-width: 560px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  border-radius: 26px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  min-height: 220px;
+}
+
+.partner-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.partner-card:nth-child(1):hover { border-color: var(--accent-yellow); }
+.partner-card:nth-child(2):hover { border-color: var(--accent-pink); }
+.partner-card:nth-child(3):hover { border-color: var(--accent-purple); }
+.partner-card:nth-child(4):hover { border-color: var(--accent-orange); }
+
+.partner-logo-area {
+  width: 114px;
+  height: 114px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+html.light .partner-logo-area {
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.10);
+}
+
+.partner-card:hover .partner-logo-area {
+  transform: scale(1.06);
+}
+
+.partner-logo-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.partner-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-color);
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.partner-tag {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 999px;
+  
+}
+
+.partner-card:nth-child(1) .partner-tag { background: rgba(239,200,4,0.15);   color: var(--accent-yellow); }
+.partner-card:nth-child(2) .partner-tag { background: rgba(239,110,168,0.15); color: var(--accent-pink); }
+.partner-card:nth-child(3) .partner-tag { background: rgba(125,77,255,0.15);  color: var(--accent-purple); }
+.partner-card:nth-child(4) .partner-tag { background: rgba(255,107,26,0.15);  color: var(--accent-orange); }
+
+.partner-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 18px;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.partner-card:nth-child(1) .partner-arrow { color: var(--accent-yellow); }
+.partner-card:nth-child(2) .partner-arrow { color: var(--accent-pink); }
+.partner-card:nth-child(3) .partner-arrow { color: var(--accent-purple); }
+.partner-card:nth-child(4) .partner-arrow { color: var(--accent-orange); }
+
+.partner-card:hover .partner-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── TABLET ── */
+@media (max-width: 1100px) {
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 700px) {
+  .partners-section {
+    padding: 32px 18px 50px;
+    border-radius: 28px;
+  }
+
+  .partners-title {
+    font-size: clamp(36px, 10vw, 52px);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+  }
+
+  .partners-desc { font-size: 14px; }
+  .partners-header { margin-bottom: 32px; }
+
+  .partners-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .partner-card {
+    min-height: 200px;
+    padding: 28px 16px 24px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  
+  .partner-logo-area {
+    width: min(52vw, 140px);
+    height: min(52vw, 140px);
+    border-radius: 20px;
+  }
+
+  .partner-name { font-size: 17px; }
+  .partner-tag  { font-size: 12px; padding: 6px 14px; }
+}
+
+
+@media (max-width: 400px) {
+  .partners-grid { grid-template-columns: 1fr; }
+
+  .partner-card {
+    min-height: 160px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 22px 20px;
+    gap: 20px;
+    border-radius: 20px;
+  }
+
+  .partner-logo-area {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+
+  .partner-name { text-align: left; font-size: 15px; }
+  .partner-tag  { align-self: flex-start; }
+  .partner-arrow { top: 14px; right: 14px; opacity: 0.4; }
+}
+
+/* =========================================================
     RODAPÉ
 ========================================================= */
 
