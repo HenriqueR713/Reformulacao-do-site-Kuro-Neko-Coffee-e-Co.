@@ -1019,13 +1019,7 @@ html.light .partners-title span {
   color: var(--accent-purple);
 }
 
-.partners-desc {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-color);
-  opacity: 0.72;
-  max-width: 560px;
-}
+
 
 .partners-grid {
   display: grid;
@@ -1100,20 +1094,8 @@ html.light .partner-logo-area {
   letter-spacing: -0.3px;
 }
 
-.partner-tag {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 10px 30px;
-  border-radius: 999px;
-  
-}
 
-.partner-card:nth-child(1) .partner-tag { background: rgba(239,200,4,0.15);   color: var(--accent-yellow); }
-.partner-card:nth-child(2) .partner-tag { background: rgba(239,110,168,0.15); color: var(--accent-pink); }
-.partner-card:nth-child(3) .partner-tag { background: rgba(125,77,255,0.15);  color: var(--accent-purple); }
-.partner-card:nth-child(4) .partner-tag { background: rgba(255,107,26,0.15);  color: var(--accent-orange); }
+
 
 .partner-arrow {
   position: absolute;
@@ -1153,7 +1135,7 @@ html.light .partner-logo-area {
     margin-bottom: 20px;
   }
 
-  .partners-desc { font-size: 14px; }
+ 
   .partners-header { margin-bottom: 32px; }
 
   .partners-grid {
@@ -1176,7 +1158,7 @@ html.light .partner-logo-area {
   }
 
   .partner-name { font-size: 17px; }
-  .partner-tag  { font-size: 12px; padding: 6px 14px; }
+ 
 }
 
 
@@ -1199,7 +1181,7 @@ html.light .partner-logo-area {
   }
 
   .partner-name { text-align: left; font-size: 15px; }
-  .partner-tag  { align-self: flex-start; }
+  
   .partner-arrow { top: 14px; right: 14px; opacity: 0.4; }
 }
 
@@ -1613,7 +1595,8 @@ html.light .footer-dev-btn:hover {
 
   .menu-left { text-align: center; align-items: center; }
   .menu-left h2 { font-size: 42px; }
-  .menu-slider { height: 250px; }
+  /* ALTERADO: era 250px */
+  .menu-slider { height: 340px; }
 
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .kn-footer { padding: 48px 24px 30px; }
@@ -1650,7 +1633,8 @@ html.light .footer-dev-btn:hover {
   .community-card h3 { font-size: 18px; }
   .community-card p  { font-size: 13px; }
 
-  .menu-slider { height: 220px; }
+  /* ALTERADO: era 220px */
+  .menu-slider { height: 300px; }
   .slider-arrow.left  { left: 6%; }
   .slider-arrow.right { right: 6%; }
 
