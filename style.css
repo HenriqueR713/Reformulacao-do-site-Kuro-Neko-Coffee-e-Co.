@@ -1910,7 +1910,7 @@ html.light .footer-dev-btn:hover {
     height: 100%;
     max-width: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
 
     border-radius: inherit;
 
