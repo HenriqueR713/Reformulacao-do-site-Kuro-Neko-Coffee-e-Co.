@@ -1611,32 +1611,94 @@ html.light .footer-dev-btn:hover {
 }
 
 @media (max-width: 700px) {
+
   .hero {
     min-height: 480px;
     padding: 48px 18px 44px;
   }
 
-  .hero::before { width: 320px; height: 220px; top: -70px; right: -70px; }
-  .hero::after  { width: 240px; height: 240px; left: -90px; bottom: -90px; }
+  .hero::before {
+    width: 320px;
+    height: 220px;
+    top: -70px;
+    right: -70px;
+  }
 
-  .hero-logo::before { top: -42px; right: -52px; font-size: 52px; letter-spacing: -4px; }
-  .hero-logo::after  { top: -20px; left: -10px; font-size: 18px; padding: 5px 12px; }
+  .hero::after {
+    width: 240px;
+    height: 240px;
+    left: -90px;
+    bottom: -90px;
+  }
 
-  .hero-logo img { width: 120px; }
-  .hero-title    { font-size: 11vw; line-height: 0.98; letter-spacing: -1px; }
-  .hero-subtitle { font-size: 10px; letter-spacing: 2px; padding: 10px 14px; }
+  .hero-logo::before {
+    top: -42px;
+    right: -52px;
+    font-size: 52px;
+    letter-spacing: -4px;
+  }
 
-  .community-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
-  .community-card { min-height: 190px; padding: 20px 14px; }
-  .community-card::after { font-size: 54px; }
-  .community-icon { font-size: 38px; }
-  .community-card h3 { font-size: 18px; }
-  .community-card p  { font-size: 13px; }
+  .hero-logo::after {
+    top: -20px;
+    left: -10px;
+    font-size: 18px;
+    padding: 5px 12px;
+  }
 
-  /* ALTERADO: era 220px */
-  .menu-slider { height: 300px; }
-  .slider-arrow.left  { left: 6%; }
-  .slider-arrow.right { right: 6%; }
+  .hero-logo img {
+    width: 120px;
+  }
+
+  .hero-title {
+    font-size: 11vw;
+    line-height: 0.98;
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 10px 14px;
+  }
+
+  .community-grid {
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+  }
+
+  .community-card {
+    min-height: 190px;
+    padding: 20px 14px;
+  }
+
+  .community-card::after {
+    font-size: 54px;
+  }
+
+  .community-icon {
+    font-size: 38px;
+  }
+
+  .community-card h3 {
+    font-size: 18px;
+  }
+
+  .community-card p {
+    font-size: 13px;
+  }
+
+  /* ALTERADO */
+  .menu-slider {
+    height: 260px;
+  }
+
+  .slider-arrow.left {
+    left: 4%;
+  }
+
+  .slider-arrow.right {
+    right: 4%;
+  }
 
   .story-section {
     margin-top: 30px;
@@ -1656,10 +1718,55 @@ html.light .footer-dev-btn:hover {
     letter-spacing: -2px;
   }
 
-  .story-stats { border-radius: 18px; }
-  .stat-num    { font-size: 24px; }
-  .stat-label  { font-size: 9px; }
+  .story-stats {
+    border-radius: 18px;
+  }
 
-  .footer-social-row { gap: 8px; }
-  .social-btn { width: 50px; height: 50px; font-size: 24px; }
+  .stat-num {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .footer-social-row {
+    gap: 8px;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .menu-slider {
+    height: 220px;
+  }
+
+  .kn-slide {
+    border-radius: 20px;
+    overflow: hidden;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kn-slide img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    display: block;
+  }
+
 }
