@@ -1917,3 +1917,15 @@ html.light .footer-dev-btn:hover {
     display: block;
   }
 }
+
+
+
+@media (hover: none) and (pointer: coarse) {
+  .partner-card:hover .partner-logo-area {
+    transform: none;
+  }
+
+  .partner-card:hover {
+    transform: none;
+  }
+}
