@@ -1167,17 +1167,7 @@ html.light .partner-logo-area {
   letter-spacing: -0.3px;
 }
 
-.partner-arrow {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 18px;
-  opacity: 0;
-  transform: translate(-4px, 4px);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
-}
+
 
 .partner-card:nth-child(1) .partner-arrow {
   color: var(--accent-yellow);
@@ -1269,11 +1259,7 @@ html.light .partner-logo-area {
     font-size: 15px;
   }
 
-  .partner-arrow {
-    top: 14px;
-    right: 14px;
-    opacity: 0.4;
-  }
+  
 }
 
 /* =========================================================
@@ -1920,12 +1906,3 @@ html.light .footer-dev-btn:hover {
 
 
 
-@media (hover: none) and (pointer: coarse) {
-  .partner-card:hover .partner-logo-area {
-    transform: none;
-  }
-
-  .partner-card:hover {
-    transform: none;
-  }
-}
