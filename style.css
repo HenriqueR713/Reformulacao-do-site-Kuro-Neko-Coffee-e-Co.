@@ -1750,14 +1750,11 @@ html.light .footer-dev-btn:hover {
   .kn-slide {
     border-radius: 20px;
     overflow: hidden;
-
-    background: #0f0f0f;
+    background: transparent;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
 
   .kn-slide img {
@@ -1767,9 +1764,9 @@ html.light .footer-dev-btn:hover {
 
     object-fit: contain;
 
-    display: block;
+    border-radius: 20px;
 
-    border-radius: inherit;
+    display: block;
   }
 
 }
