@@ -2300,6 +2300,8 @@ html.light .coworking-title span {
   height: 100%;
   object-fit: cover;
   display: block;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* =========================================================
