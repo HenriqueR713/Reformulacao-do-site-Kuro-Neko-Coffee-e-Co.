@@ -15,9 +15,9 @@ function toggleMode() {
 // IMAGENS DO CARDÁPIO //
 
 const images = [
+  "./assets/Imagens/Imagens Cardapio/COMIDA-4.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-1.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-3.jpeg",
-  "./assets/Imagens/Imagens Cardapio/COMIDA-4.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-5.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-6.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-7.jpeg",
