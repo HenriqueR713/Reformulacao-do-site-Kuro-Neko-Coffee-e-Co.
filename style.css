@@ -1936,9 +1936,8 @@ html.light .footer-dev-btn:hover {
 .cardapio-modal-box {
   position: relative;
   z-index: 1;
+  width: min(540px, 94vw);
   height: min(92vh, 1100px);
-  width: calc(min(92vh, 1100px) * 0.625);
-  max-width: 96vw;
   background: var(--menu-solid-bg);
   border-radius: 26px;
   border: 1px solid var(--card-border);
@@ -2097,10 +2096,9 @@ html.light .cardapio-modal-box {
 /* ── MOBILE ── */
 @media (max-width: 700px) {
 .cardapio-modal-box {
+    width: 100vw;
     height: 100vh;
     max-height: 100vh;
-    width: calc(100vh * 0.625);
-    max-width: 100vw;
     border-radius: 0;
   }
 
