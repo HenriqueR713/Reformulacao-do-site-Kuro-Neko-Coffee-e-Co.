@@ -1936,9 +1936,9 @@ html.light .footer-dev-btn:hover {
 .cardapio-modal-box {
   position: relative;
   z-index: 1;
-  width: min(820px, 96vw);
-  height: min(95vh, 1100px);
+  height: min(92vh, 1100px);
   width: calc(min(92vh, 1100px) * 0.625);
+  max-width: 96vw;
   background: var(--menu-solid-bg);
   border-radius: 26px;
   border: 1px solid var(--card-border);
@@ -2096,26 +2096,17 @@ html.light .cardapio-modal-box {
 
 /* ── MOBILE ── */
 @media (max-width: 700px) {
-  .cardapio-modal-box {
-    width: 100vw;
+.cardapio-modal-box {
     height: 100vh;
     max-height: 100vh;
+    width: calc(100vh * 0.625);
+    max-width: 100vw;
     border-radius: 0;
   }
 
   .cardapio-pages {
     padding: 2px;
     gap: 6px;
-  }
-
- .cardapio-page-canvas {
-    width: auto;
-    max-width: 100%;
-    height: 100%;
-  }
-
-  .cardapio-pages {
-    height: 100%;
   }
 
   .cardapio-close-btn {
@@ -2126,12 +2117,6 @@ html.light .cardapio-modal-box {
 
   .cardapio-modal-title {
     font-size: 14px;
-  }
-
-  .cardapio-page-wrap {
-    width: 100%;
-    height: calc(100vh - 64px);
-    padding: 0;
   }
 }
 
