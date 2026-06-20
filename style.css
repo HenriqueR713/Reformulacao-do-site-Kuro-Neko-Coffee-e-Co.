@@ -81,6 +81,10 @@ body * {
   font-family: "Inter", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* =========================================================
    BODY
 ========================================================= */
@@ -1904,5 +1908,230 @@ html.light .footer-dev-btn:hover {
   }
 }
 
+/* =========================================================
+   MODAL CARDÁPIO
+========================================================= */
 
+.cardapio-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardapio-modal.is-open {
+  display: flex;
+}
+
+.cardapio-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cardapio-modal-box {
+  position: relative;
+  z-index: 1;
+  width: min(820px, 96vw);
+  height: min(95vh, 1100px);
+  width: calc(min(92vh, 1100px) * 0.625);
+  background: var(--menu-solid-bg);
+  border-radius: 26px;
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  animation: cardapioPopIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cardapioPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cardapio-modal-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--card-border);
+  background: var(--menu-solid-bg);
+}
+
+.cardapio-modal-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-color);
+  letter-spacing: -0.2px;
+}
+
+.cardapio-close-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent-red);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cardapio-close-btn:hover {
+  transform: scale(1.08);
+}
+
+.cardapio-modal-body {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-width: thin;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardapio-modal-body::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.cardapio-modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cardapio-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+.cardapio-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex: 1;
+  width: 100%;
+  min-height: 300px;
+  color: var(--text-color);
+  opacity: 0.75;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cardapio-loading.is-hidden {
+  display: none;
+}
+
+.cardapio-spinner {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--accent-yellow);
+  animation: cardapioSpin 0.8s linear infinite;
+}
+
+@keyframes cardapioSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cardapio-pages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+}
+
+.cardapio-page-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardapio-page-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fff;
+}
+
+html.light .cardapio-modal-body {
+  background: #d9d3c8;
+}
+
+html.light .cardapio-modal-box {
+  background: var(--menu-solid-bg);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 700px) {
+  .cardapio-modal-box {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .cardapio-pages {
+    padding: 2px;
+    gap: 6px;
+  }
+
+ .cardapio-page-canvas {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .cardapio-pages {
+    height: 100%;
+  }
+
+  .cardapio-close-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .cardapio-modal-title {
+    font-size: 14px;
+  }
+
+  .cardapio-page-wrap {
+    width: 100%;
+    height: calc(100vh - 64px);
+    padding: 0;
+  }
+}
 

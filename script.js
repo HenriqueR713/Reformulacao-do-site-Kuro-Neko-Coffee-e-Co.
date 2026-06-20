@@ -20,6 +20,7 @@ const images = [
   "./assets/Imagens/Imagens Cardapio/COMIDA-4.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-5.jpeg",
   "./assets/Imagens/Imagens Cardapio/COMIDA-6.jpeg",
+  "./assets/Imagens/Imagens Cardapio/COMIDA-7.jpeg",
 ]
 
 const SLIDER_N = images.length
@@ -228,3 +229,85 @@ function sliderGo(dir) {
 
 window.addEventListener("resize", sliderBuild)
 sliderBuild()
+
+// =========================================================
+// MODAL CARDÁPIO (PDF)
+// =========================================================
+
+const CARDAPIO_PDF_URL = "./assets/Imagens/PDF Cardapio/KN_CARDAPIO_DIGITAL.pdf"
+
+let cardapioPdfDoc = null
+let cardapioRendered = false
+
+function openCardapioModal() {
+  const modal = document.getElementById("cardapioModal")
+  modal.classList.add("is-open")
+  document.body.classList.add("cardapio-no-scroll")
+
+  if (!cardapioRendered) {
+    renderCardapioPdf()
+  }
+}
+
+function closeCardapioModal() {
+  const modal = document.getElementById("cardapioModal")
+  modal.classList.remove("is-open")
+  document.body.classList.remove("cardapio-no-scroll")
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const modal = document.getElementById("cardapioModal")
+    if (modal && modal.classList.contains("is-open")) {
+      closeCardapioModal()
+    }
+  }
+})
+
+async function renderCardapioPdf() {
+  const loading = document.getElementById("cardapioLoading")
+  const container = document.getElementById("cardapioPagesContainer")
+
+  if (typeof pdfjsLib === "undefined") {
+    loading.innerHTML = "<span>Não foi possível carregar o cardápio.</span>"
+    return
+  }
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"
+
+  try {
+    cardapioPdfDoc = await pdfjsLib.getDocument(CARDAPIO_PDF_URL).promise
+
+    for (let pageNum = 1; pageNum <= cardapioPdfDoc.numPages; pageNum++) {
+      const page = await cardapioPdfDoc.getPage(pageNum)
+
+      const scale = 1.5
+      const viewport = page.getViewport({ scale })
+
+const canvas = document.createElement("canvas")
+canvas.className = "cardapio-page-canvas"
+canvas.width = viewport.width
+canvas.height = viewport.height
+
+const ctx = canvas.getContext("2d")
+
+await page.render({
+  canvasContext: ctx,
+  viewport: viewport,
+}).promise
+
+const pageWrap = document.createElement("div")
+pageWrap.className = "cardapio-page-wrap"
+pageWrap.appendChild(canvas)
+
+container.appendChild(pageWrap)
+    }
+
+    cardapioRendered = true
+    loading.classList.add("is-hidden")
+  } catch (err) {
+    console.error("Erro ao carregar o cardápio em PDF:", err)
+    loading.innerHTML = "<span>Erro ao carregar o cardápio. Tente novamente.</span>"
+  }
+}

@@ -127,14 +127,13 @@
                 Explore criações exclusivas, cafés especiais e delícias
                 temáticas inspiradas no universo felino.
               </p>
-              <a
-                href="https://drive.google.com/file/d/1ytxaRlqe_l_cetoriZzLAZj50xPsck0l/view"
-                target="_blank"
+             <button
+                type="button"
                 class="menu-btn"
-                rel="external"
+                onclick="openCardapioModal()"
               >
                 Clique Aqui
-              </a>
+              </button>
             </div>
 
             <div class="menu-right">
@@ -167,7 +166,7 @@
       </div>
 
       <div class="story-content">
-        <span class="story-eyebrow">HISTÓRIA DO KURO NEKO COFFEE</span>
+        <span class="story-eyebrow">HISTÓRIA DO KURO NEKO COFFEE & CO</span>
 
         <h2 class="story-title">
           Uma cafeteria feita para
@@ -211,15 +210,15 @@
 
         <div class="story-stats">
           <div class="story-stat">
-            <span class="stat-num">+200</span>
+            <span class="stat-num">+600</span>
             <span class="stat-label">Clientes felizes</span>
           </div>
           <div class="story-stat">
-            <span class="stat-num">+19</span>
+            <span class="stat-num">+20</span>
             <span class="stat-label">Gatinhos adotados</span>
           </div>
           <div class="story-stat">
-            <span class="stat-num">4,6★</span>
+            <span class="stat-num">4,8★</span>
             <span class="stat-label">Avaliação no Google</span>
           </div>
         </div>
@@ -430,7 +429,7 @@
         <div class="footer-dev">
           <span class="footer-dev-text">Desenvolvido por</span>
           <a
-            href="https://henriquer713.github.io/Projeto-DevLink-Rockseat/"
+            href="https://portif-lio-zeta-sable.vercel.app/"
             target="_blank"
             class="footer-dev-btn"
             rel="external"
@@ -444,6 +443,33 @@
       <!-- /footer-inner -->
     </footer>
 
+    <!-- MODAL CARDÁPIO -->
+    <div id="cardapioModal" class="cardapio-modal">
+      <div class="cardapio-modal-overlay" onclick="closeCardapioModal()"></div>
+
+      <div class="cardapio-modal-box">
+        <div class="cardapio-modal-header">
+          <span class="cardapio-modal-title">Cardápio Kuro Neko</span>
+          <button
+            type="button"
+            class="cardapio-close-btn"
+            onclick="closeCardapioModal()"
+            aria-label="Fechar cardápio"
+          >
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </div>
+
+        <div class="cardapio-modal-body" id="cardapioModalBody">
+          <div class="cardapio-loading" id="cardapioLoading">
+            <div class="cardapio-spinner"></div>
+            <span>Carregando cardápio...</span>
+          </div>
+          <div id="cardapioPagesContainer" class="cardapio-pages"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- SCRIPTS -->
     <script
       type="module"
@@ -453,6 +479,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
