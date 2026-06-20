@@ -282,7 +282,7 @@ async function renderCardapioPdf() {
     for (let pageNum = 1; pageNum <= cardapioPdfDoc.numPages; pageNum++) {
       const page = await cardapioPdfDoc.getPage(pageNum)
 
-      const scale = 1.5
+      const scale = 3
       const viewport = page.getViewport({ scale })
 
 const canvas = document.createElement("canvas")
