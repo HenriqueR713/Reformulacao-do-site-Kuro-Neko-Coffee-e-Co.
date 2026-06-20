@@ -1,4 +1,17 @@
 /* =========================================================
+   FONTE - BRICOLAGE GROTESQUE (TÍTULOS)
+========================================================= */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf")
+    format("truetype");
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+}
+
+/* =========================================================
    VARIÁVEIS
 ========================================================= */
 
@@ -232,6 +245,7 @@ body {
 
 .hero-title {
   color: white;
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(44px, 7vw, 78px);
   line-height: 0.92;
   font-weight: 900;
@@ -247,6 +261,7 @@ body {
   color: black;
   padding: 14px 22px;
   border-radius: 18px;
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(12px, 1.3vw, 18px);
   font-weight: 900;
   letter-spacing: 3px;
@@ -284,6 +299,7 @@ html.light .hero-logo img {
 
 .community-header h2 {
   color: var(--text-color);
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(34px, 5vw, 58px);
   font-weight: 900;
   letter-spacing: -2px;
@@ -375,6 +391,7 @@ html.light .hero-logo img {
 }
 
 .community-card h3 {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 28px;
   font-weight: 800;
   margin-bottom: 12px;
@@ -417,6 +434,7 @@ html.light .hero-logo img {
 }
 
 .story-eyebrow {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 800;
 
@@ -427,6 +445,7 @@ html.light .hero-logo img {
 }
 
 .story-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(42px, 5vw, 82px);
   font-weight: 900;
 
@@ -654,6 +673,7 @@ html.light .menu-banner::after {
 
 .menu-left h2 {
   color: var(--text-color);
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(42px, 5vw, 72px);
   line-height: 0.95;
   font-weight: 300;
@@ -911,6 +931,7 @@ html.light .story-section::after {
 }
 
 .story-eyebrow {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 4px;
@@ -919,6 +940,7 @@ html.light .story-section::after {
 }
 
 .story-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(42px, 5vw, 82px);
   font-weight: 900;
   line-height: 0.92;
@@ -1061,6 +1083,7 @@ html.light .partners-section::after {
 
 .partners-eyebrow {
   display: block;
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 4px;
@@ -1070,6 +1093,7 @@ html.light .partners-section::after {
 }
 
 .partners-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(38px, 5vw, 72px);
   font-weight: 900;
   line-height: 1;
@@ -1164,6 +1188,7 @@ html.light .partner-logo-area {
 }
 
 .partner-name {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 20px;
   font-weight: 800;
   color: var(--text-color);
@@ -1352,6 +1377,7 @@ html.light .partner-logo-area {
 }
 
 .footer-brand-name {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 20px;
   font-weight: 900;
   color: var(--text-color);
@@ -1437,6 +1463,7 @@ html.light .footer-brand-name span {
 }
 
 .footer-col-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 3px;
@@ -1971,6 +1998,7 @@ html.light .footer-dev-btn:hover {
 }
 
 .cardapio-modal-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 16px;
   font-weight: 800;
   color: var(--text-color);
@@ -2163,6 +2191,7 @@ html.light .coworking-banner::after {
 }
 
 .coworking-eyebrow {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 4px;
@@ -2173,6 +2202,7 @@ html.light .coworking-banner::after {
 }
 
 .coworking-title {
+  font-family: "Bricolage Grotesque", "Inter", sans-serif;
   font-size: clamp(34px, 4vw, 52px);
   font-weight: 900;
   line-height: 1.05;
@@ -2300,8 +2330,6 @@ html.light .coworking-title span {
   height: 100%;
   object-fit: cover;
   display: block;
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 /* =========================================================
@@ -2372,7 +2400,7 @@ html.light .coworking-title span {
 
   .coworking-video-frame {
     max-width: 420px;
-    width: 75%;
+    width: 92%;
   }
 }
 
