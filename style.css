@@ -6,8 +6,7 @@
   font-family: "Bricolage Grotesque";
   src: url("./assets/fonts/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf")
     format("truetype");
-  font-weight: 200 800;
-  font-stretch: 75% 100%;
+  font-weight: 200 900;
   font-display: swap;
 }
 
@@ -90,7 +89,7 @@ html.light {
   -webkit-tap-highlight-color: transparent;
 }
 
-body * {
+body {
   font-family: "Inter", sans-serif;
 }
 
@@ -445,7 +444,7 @@ html.light .hero-logo img {
 }
 
 .story-title {
-  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-family: "Bricolage Grotesque", "Inter", sans-serif ;
   font-size: clamp(42px, 5vw, 82px);
   font-weight: 900;
 
@@ -931,7 +930,7 @@ html.light .story-section::after {
 }
 
 .story-eyebrow {
-  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-family: "Bricolage Grotesque";
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 4px;
@@ -940,7 +939,7 @@ html.light .story-section::after {
 }
 
 .story-title {
-  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-family: "Bricolage Grotesque";
   font-size: clamp(42px, 5vw, 82px);
   font-weight: 900;
   line-height: 0.92;
@@ -1083,7 +1082,7 @@ html.light .partners-section::after {
 
 .partners-eyebrow {
   display: block;
-  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-family: "Bricolage Grotesque";
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 4px;
@@ -1093,7 +1092,7 @@ html.light .partners-section::after {
 }
 
 .partners-title {
-  font-family: "Bricolage Grotesque", "Inter", sans-serif;
+  font-family: "Bricolage Grotesque"; 
   font-size: clamp(38px, 5vw, 72px);
   font-weight: 900;
   line-height: 1;
