@@ -941,7 +941,7 @@ html.light .story-section::after {
 .story-title {
   font-family: "Bricolage Grotesque";
   font-size: clamp(42px, 5vw, 82px);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.92;
   letter-spacing: -3px;
   color: var(--text-color);
