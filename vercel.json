@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://kuro-neko-coffee-co.vercel.app/:path*",
+      "permanent": true
+    }
+  ]
+}
